@@ -1,0 +1,67 @@
+/* Center the terminal on the screen */
+.terminal {
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+  }
+  
+  /* Terminal window styling */
+  .terminal-window {
+    background-color: #1e1e1e;
+    width: 80%;
+    max-width: 800px;
+    height: 60%;
+    max-height: 500px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  /* Top bar to mimic macOS terminal */
+  .terminal-header {
+    background-color: #2e2e2e;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  /* Circles in the terminal header */
+  .terminal-header .circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+  
+  .terminal-header .circle.red {
+    background-color: #ff5f56;
+  }
+  
+  .terminal-header .circle.yellow {
+    background-color: #ffbd2e;
+  }
+  
+  .terminal-header .circle.green {
+    background-color: #27c93f;
+  }
+  
+  /* Main terminal content styling */
+  .terminal-content {
+    flex: 1;
+    padding: 20px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1rem;
+    color: #00ff00;
+    white-space: pre-wrap;
+    overflow-y: auto;
+  }
+  
