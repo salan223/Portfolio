@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo } from "react";
+import "../css/TypingEffect.css"
 
 function TypingEffect({ onComplete }) {
   const [output, setOutput] = useState([]); // Store typed commands
@@ -28,7 +29,7 @@ function TypingEffect({ onComplete }) {
       if (text.length < currentCommand.length) {
         const timeout = setTimeout(() => {
           setText((prev) => prev + currentCommand[text.length]);
-        }, 50); // Typing speed
+        }, 10); // Typing speed
         return () => clearTimeout(timeout);
       } else {
         // Add completed command to output and move to the next command
@@ -36,7 +37,7 @@ function TypingEffect({ onComplete }) {
           setOutput((prev) => [...prev, `${terminalPrompt}${currentCommand}`]);
           setText(""); // Clear text for the next command
           setCurrentIndex((prev) => prev + 1);
-        }, 1000); // Delay before starting the next command
+        }, 100); // Delay before starting the next command
         return () => clearTimeout(timeout);
       }
     } else {

@@ -1,0 +1,115 @@
+/* Navbar Container */
+.navbar {
+    position: sticky; /* Keeps the navbar at the top on scroll */
+    top: 0;
+    z-index: 50; /* Ensures navbar is above other elements */
+    backdrop-filter: blur(10px); /* Adds a glassmorphism effect */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border for separation */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+    display: flex; /* Flex container for Navbar */
+    justify-content: space-between; /* Space between the logo and links */
+    align-items: center; /* Vertically center items */
+    padding: 12px 24px; /* Add padding for spacing */
+    background-color: #DEE4EA; /* Light mode background */
+    color: #22272B; /* Light mode text color */
+  }
+  
+  /* Dark mode support */
+  html.dark .navbar {
+    background-color: #22272B; /* Dark mode background */
+    color: #DEE4EA; /* Dark mode text color */
+  }
+  
+  /* Logo */
+  .navbar .text-xl {
+    font-family: "Fira Code", monospace; /* Coding-style font */
+    color: inherit; /* Inherit text color from .navbar */
+    font-weight: bold; /* Bold font */
+    font-size: 1.25rem; /* Slightly larger font size */
+    transition: color 0.3s ease;
+  }
+  
+  .navbar .text-xl:hover {
+    color: #61dafb; /* Change to light blue on hover */
+  }
+  
+  /* Navbar Links */
+  .navbar ul {
+    list-style: none;
+    display: flex; /* Horizontal layout */
+    justify-content: center; /* Center align links */
+    align-items: center; /* Vertical alignment */
+    gap: 24px; /* Space between links */
+    margin: 0;
+    padding: 0;
+    flex-grow: 1; /* Allows links to take up remaining space evenly */
+  }
+  
+  .navbar li {
+    font-family: "Fira Code", monospace; /* Coding-style font */
+    font-weight: bold; /* Bold text */
+    color: inherit; /* Inherit text color from .navbar */
+    font-size: 1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .navbar li:hover {
+    color: #61dafb; /* Light blue on hover */
+    transform: scale(1.1); /* Slightly enlarge link */
+    text-decoration: underline;
+  }
+  
+  /* Theme Toggle Button */
+  .navbar button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #4b5563; /* Gray background for button */
+    border-radius: 50%; /* Circular button */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .navbar button:hover {
+    background-color: #374151; /* Darker gray on hover */
+    transform: rotate(20deg); /* Subtle rotation on hover */
+  }
+  
+  .navbar button svg {
+    font-size: 1.25rem;
+    color: #fbbf24; /* Yellow for Sun icon */
+    transition: color 0.3s ease;
+  }
+  
+  .navbar button .dark svg {
+    color: #3b82f6; /* Blue for Moon icon */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column; /* Stack items vertically */
+      align-items: flex-start; /* Align items to the left */
+      padding: 16px;
+    }
+  
+    .navbar ul {
+      flex-direction: column; /* Stack links vertically */
+      gap: 12px; /* Smaller gap for vertical layout */
+    }
+  
+    .navbar li {
+      font-size: 0.9rem; /* Smaller font size */
+    }
+  
+    .navbar button {
+      margin-top: 12px; /* Add spacing below the links */
+      width: 36px;
+      height: 36px;
+    }
+  }
+  
