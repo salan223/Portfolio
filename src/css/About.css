@@ -1,9 +1,8 @@
 /* About Section Styling */
 .about-section {
     padding: 2rem;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
   }
   
   .about-container {
@@ -20,30 +19,32 @@
   
   /* Sidebar Styling */
   .sidebar {
-    background-color: var(--card-bg-color);
+    background-color: var(--bg-sidebar);
     border-radius: 0.75rem;
     padding: 2rem;
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    width: 100%; /* Added for responsiveness */
+    max-width: 350px; /* Increased the width */
   }
   
   .profile-img {
     border-radius: 50%;
     margin: 0 auto;
     margin-bottom: 1rem;
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
   }
   
   .profile-name {
-    font-size: 1.25rem;
+    font-size: 1.5rem; /* Larger font size */
     font-weight: bold;
     margin-bottom: 0.25rem;
   }
   
   .profile-title {
-    font-size: 0.9rem;
-    color: var(--subtext-color);
+    font-size: 1rem;
+    color: var(--text-muted);
     margin-bottom: 1.5rem;
   }
   
@@ -55,13 +56,13 @@
   
   .details ul li {
     margin-bottom: 1rem;
-    color: var(--text-color);
-    font-size: 0.85rem;
+    color: var(--text-dark);
+    font-size: 1rem; /* Larger font size */
   }
   
   .details .social-icons i {
-    color: var(--highlight-color);
-    font-size: 1rem;
+    color: var(--accent);
+    font-size: 1.5rem;
     margin-right: 0.5rem;
   }
   
@@ -91,7 +92,7 @@
   }
   
   .grid-item {
-    background-color: var(--card-bg-color);
+    background-color: var(--bg-grid-item);
     border-radius: 0.75rem;
     padding: 1rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
@@ -106,32 +107,25 @@
   .grid-item h4 {
     font-size: 1.25rem;
     font-weight: bold;
-    color: var(--highlight-color);
+    color: var(--accent);
   }
-  
-  /* Footer */
-  footer {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    padding: 2rem;
-    text-align: center;
-    transition: background-color 0.3s ease, color 0.3s ease;
+  .details{
+    text-align: left;
   }
-  
-  /* Theme Variables */
   :root {
-    --bg-color: #f8fafc; /* Light background */
-    --card-bg-color: #e2e8f0; /* Light card background */
-    --text-color: #1a202c; /* Dark text for light mode */
-    --subtext-color: #4a5568; /* Subtle gray text */
-    --highlight-color: #f6ad55; /* Accent color */
+    --bg-light: #f8f9fa;
+    --text-dark: #212529;
+    --text-muted: #6c757d;
+    --accent: #fbbf24;
+    --bg-sidebar: #dee2e6;
+    --bg-grid-item: #ffffff;
   }
   
-  :root.dark {
-    --bg-color: #1a202c; /* Dark background */
-    --card-bg-color: #2d3748; /* Dark card background */
-    --text-color: #edf2f7; /* Light text for dark mode */
-    --subtext-color: #a0aec0; /* Subtle gray text */
-    --highlight-color: #f6e05e; /* Accent color for dark mode */
+  .dark {
+    --bg-light: #212529;
+    --text-dark: #f8f9fa;
+    --text-muted: #adb5bd;
+    --accent: #fbbf24;
+    --bg-sidebar: #343a40;
+    --bg-grid-item: #495057;
   }
-  
