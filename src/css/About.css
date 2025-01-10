@@ -1,13 +1,9 @@
+/* About Section Styling */
 .about-section {
     padding: 2rem;
-    background-color: #22272b;
-    color: #dee4ea;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  .dark .about-section {
-    background-color: #dee4ea;
-    color: #22272b;
   }
   
   .about-container {
@@ -22,21 +18,19 @@
     }
   }
   
+  /* Sidebar Styling */
   .sidebar {
-    background-color: #2d333a;
+    background-color: var(--card-bg-color);
     border-radius: 0.75rem;
     padding: 2rem;
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
   }
   
-  .dark .sidebar {
-    background-color: #f3f4f6;
-  }
-  
   .profile-img {
     border-radius: 50%;
-    margin: 0 auto 1rem;
+    margin: 0 auto;
+    margin-bottom: 1rem;
     width: 100px;
     height: 100px;
   }
@@ -49,7 +43,7 @@
   
   .profile-title {
     font-size: 0.9rem;
-    color: #a0aec0;
+    color: var(--subtext-color);
     margin-bottom: 1.5rem;
   }
   
@@ -61,16 +55,17 @@
   
   .details ul li {
     margin-bottom: 1rem;
-    color: #dee4ea;
+    color: var(--text-color);
     font-size: 0.85rem;
   }
   
-  .social-icons i {
-    color: #fbbf24;
+  .details .social-icons i {
+    color: var(--highlight-color);
     font-size: 1rem;
     margin-right: 0.5rem;
   }
   
+  /* Main Content Styling */
   .content h2 {
     font-size: 1.75rem;
     font-weight: bold;
@@ -81,10 +76,6 @@
     font-size: 1.5rem;
     margin-top: 2rem;
     font-weight: bold;
-  }
-  
-  .typing-effect .highlight {
-    color: #fbbf24;
   }
   
   .grid {
@@ -100,7 +91,7 @@
   }
   
   .grid-item {
-    background-color: #2d333a;
+    background-color: var(--card-bg-color);
     border-radius: 0.75rem;
     padding: 1rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
@@ -115,6 +106,32 @@
   .grid-item h4 {
     font-size: 1.25rem;
     font-weight: bold;
-    color: #fbbf24;
+    color: var(--highlight-color);
+  }
+  
+  /* Footer */
+  footer {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 2rem;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Theme Variables */
+  :root {
+    --bg-color: #f8fafc; /* Light background */
+    --card-bg-color: #e2e8f0; /* Light card background */
+    --text-color: #1a202c; /* Dark text for light mode */
+    --subtext-color: #4a5568; /* Subtle gray text */
+    --highlight-color: #f6ad55; /* Accent color */
+  }
+  
+  :root.dark {
+    --bg-color: #1a202c; /* Dark background */
+    --card-bg-color: #2d3748; /* Dark card background */
+    --text-color: #edf2f7; /* Light text for dark mode */
+    --subtext-color: #a0aec0; /* Subtle gray text */
+    --highlight-color: #f6e05e; /* Accent color for dark mode */
   }
   
