@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
 import About from "./components/About";
+import Footer from "./components/Footer";
 import TypingEffect from "./components/TypingEffect"; // For terminal effect only
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
           <main>
             <About />
           </main>
+          <Footer />
         </>
       )}
     </div>

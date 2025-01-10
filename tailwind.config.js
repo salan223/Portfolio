@@ -1,11 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
-  darkMode: "class", // Use the class strategy for manual toggling
+  darkMode: "class", // Enable class-based dark mode
   theme: {
     extend: {
-      fontFamily: {
-        mono: ["Fira Code", "monospace"], // Coding-style font
+      colors: {
+        lightBg: "#DEE4EA",
+        lightText: "#22272B",
+        darkBg: "#22272B",
+        darkText: "#DEE4EA",
+        accent: "#FBBF24",
       },
     },
   },

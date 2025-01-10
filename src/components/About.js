@@ -75,33 +75,46 @@ function About() {
         <main className="content">
           {/* Typing Effect */}
           <div className="typing-effect text-2xl font-bold">
-            I am <span className="highlight">{currentMessage}</span>
+            I am{" "}
+            <span className="highlight text-accent font-extrabold">
+              {currentMessage}
+            </span>
           </div>
           {/* About Section */}
           <div className="about-text mt-6">
             <h2>About Me</h2>
             <p>
-              I'm a Creative Director and UI/UX Designer from Sydney, Australia, working in web
-              development and print media. I enjoy turning complex problems into simple, beautiful,
-              and intuitive designs.
+              I'm a Creative Director and UI/UX Designer from Sydney, Australia,
+              working in web development and print media. I enjoy turning
+              complex problems into simple, beautiful, and intuitive designs.
             </p>
             <h3>What I'm Doing</h3>
             <div className="grid">
               <div className="grid-item">
                 <h4>Web Design</h4>
-                <p>The most modern and high-quality design made at a professional level.</p>
+                <p>
+                  The most modern and high-quality design made at a professional
+                  level.
+                </p>
               </div>
               <div className="grid-item">
                 <h4>Web Development</h4>
-                <p>High-quality development of sites at the professional level.</p>
+                <p>
+                  High-quality development of sites at the professional level.
+                </p>
               </div>
               <div className="grid-item">
                 <h4>Mobile Apps</h4>
-                <p>Professional development of applications for iOS and Android.</p>
+                <p>
+                  Professional development of applications for iOS and Android.
+                </p>
               </div>
               <div className="grid-item">
                 <h4>Photography</h4>
-                <p>I make high-quality photos of any category at a professional level.</p>
+                <p>
+                  I make high-quality photos of any category at a professional
+                  level.
+                </p>
               </div>
             </div>
           </div>
