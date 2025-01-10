@@ -1,11 +1,16 @@
 import React from "react";
-import "../css/Footer.css"; // Import CSS for Hero
 
-function Footer() {
+function Footer({ theme }) {
   return (
-    <section className="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white h-screen flex items-center justify-center">
-      <h1 className="text-4xl font-bold">Footer</h1>
-    </section>
+    <footer
+      className={`footer p-4 ${
+        theme === "dark" ? "bg-gray-900 text-white" : "bg-gray-100 text-black"
+      } transition-colors`}
+    >
+      <div className="text-center">
+        &copy; {new Date().getFullYear()} Salan's Portfolio. All rights reserved.
+      </div>
+    </footer>
   );
 }
 

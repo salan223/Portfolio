@@ -112,4 +112,21 @@
       height: 36px;
     }
   }
+  .theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #374151; /* Gray background */
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .theme-toggle:hover {
+    background-color: #fbbf24; /* Yellow hover background */
+    transform: scale(1.1); /* Slight zoom effect on hover */
+  }
   

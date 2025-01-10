@@ -1,33 +1,18 @@
-import React, { useState, useEffect } from "react";
-import { FaSun, FaMoon } from "react-icons/fa"; // Import Sun and Moon icons
+import React, { useState } from "react";
+import { FaSun, FaMoon } from "react-icons/fa";
 
-function Navbar({ setActiveSection, onThemeToggle }) {
+function Navbar({ toggleTheme, theme }) {
   const [activeTab, setActiveTab] = useState("about");
-  const [isDarkMode, setIsDarkMode] = useState(true);
 
-  // Detect current theme and toggle icon accordingly
-  useEffect(() => {
-    const theme = document.documentElement.classList.contains("dark");
-    setIsDarkMode(theme);
-  }, []);
-
-  // Handle tab click
   const handleTabClick = (tabName) => {
     setActiveTab(tabName);
-    setActiveSection(tabName);
-  };
-
-  // Handle theme toggle
-  const handleThemeToggle = () => {
-    setIsDarkMode(!isDarkMode);
-    onThemeToggle();
   };
 
   return (
     <nav
-      className={`navbar flex justify-between items-center p-4 transition-colors ${
-        isDarkMode ? "bg-gray-900 text-white" : "bg-gray-200 text-gray-900"
-      } shadow-md`}
+      className={`navbar flex justify-between items-center p-4 ${
+        theme === "dark" ? "bg-gray-900 text-white" : "bg-gray-100 text-black"
+      } shadow-md transition-colors`}
     >
       {/* Logo */}
       <div
@@ -42,7 +27,7 @@ function Navbar({ setActiveSection, onThemeToggle }) {
         {["about", "resume", "portfolio", "blog", "contact"].map((tab) => (
           <li
             key={tab}
-            className={`cursor-pointer px-4 py-2 rounded-md transition ${
+            className={`cursor-pointer px-4 py-2 rounded-md ${
               activeTab === tab
                 ? "bg-yellow-500 text-black font-bold"
                 : "hover:text-yellow-500"
@@ -56,10 +41,12 @@ function Navbar({ setActiveSection, onThemeToggle }) {
 
       {/* Theme Toggle Button */}
       <button
-        onClick={handleThemeToggle}
-        className="theme-toggle p-2 rounded-full flex items-center justify-center transition bg-gray-700 text-white hover:bg-yellow-500 dark:bg-gray-300 dark:text-gray-800"
+        onClick={toggleTheme}
+        className={`theme-toggle p-2 rounded-full ${
+          theme === "dark" ? "bg-gray-700 text-white" : "bg-yellow-300 text-black"
+        } hover:bg-yellow-500 transition flex items-center justify-center`}
       >
-        {isDarkMode ? <FaMoon /> : <FaSun />}
+        {theme === "dark" ? <FaMoon /> : <FaSun />}
       </button>
     </nav>
   );

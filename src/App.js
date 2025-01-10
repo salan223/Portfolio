@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./components/Navbar";
-import About from "./components/About";
 import Footer from "./components/Footer";
+import About from "./components/About";
 import TypingEffect from "./components/TypingEffect"; // For terminal effect only
 
 function App() {
-  const [showContent, setShowContent] = useState(false); // Controls when to show the main content
   const [theme, setTheme] = useState("dark");
+  const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") || "dark";
-    document.documentElement.classList.toggle("dark", savedTheme === "dark");
     setTheme(savedTheme);
+    document.documentElement.classList.toggle("dark", savedTheme === "dark");
   }, []);
 
   const toggleTheme = () => {
@@ -27,11 +27,11 @@ function App() {
         <TypingEffect onComplete={() => setShowContent(true)} />
       ) : (
         <>
-          <Navbar onThemeToggle={toggleTheme} theme={theme} />
+          <Navbar toggleTheme={toggleTheme} theme={theme} />
           <main>
             <About />
           </main>
-          <Footer />
+          <Footer theme={theme} />
         </>
       )}
     </div>
