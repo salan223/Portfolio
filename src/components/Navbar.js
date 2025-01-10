@@ -1,96 +1,47 @@
-import React, { useEffect, useState } from "react";
-import { FaMoon, FaSun } from "react-icons/fa";
-import "../css/Navbar.css";
+import React, { useState } from "react";
 
-function Navbar({ setActiveSection }) {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+function Navbar({ setActiveSection, onThemeToggle }) {
+  const [activeTab, setActiveTab] = useState("about");
 
-  // Toggle between dark and light mode
-  const toggleTheme = () => {
-    const htmlElement = document.documentElement;
-
-    if (isDarkMode) {
-      htmlElement.classList.remove("dark");
-      localStorage.setItem("theme", "light"); // Save light mode preference
-      setIsDarkMode(false);
-    } else {
-      htmlElement.classList.add("dark");
-      localStorage.setItem("theme", "dark"); // Save dark mode preference
-      setIsDarkMode(true);
-    }
+  // Handle tab click
+  const handleTabClick = (tabName) => {
+    setActiveTab(tabName);
+    setActiveSection(tabName);
   };
 
-  // On initial load, set the theme based on localStorage or system preference
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-
-    if (savedTheme === "dark") {
-      document.documentElement.classList.add("dark");
-      setIsDarkMode(true);
-    } else if (savedTheme === "light") {
-      document.documentElement.classList.remove("dark");
-      setIsDarkMode(false);
-    } else {
-      // Default to system preference if no preference is saved
-      const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      if (prefersDarkMode) {
-        document.documentElement.classList.add("dark");
-        setIsDarkMode(true);
-      } else {
-        document.documentElement.classList.remove("dark");
-        setIsDarkMode(false);
-      }
-    }
-  }, []);
-
   return (
-    <nav className="navbar flex justify-between items-center p-4 bg-gray-800 text-white dark:bg-gray-900">
+    <nav className="navbar flex justify-between items-center p-4 bg-gray-900 dark:bg-gray-900 text-white shadow-md transition-colors">
       {/* Logo */}
       <div
         className="text-xl font-bold cursor-pointer"
-        onClick={() => setActiveSection("home")}
+        onClick={() => handleTabClick("about")}
       >
         Salan's Portfolio
       </div>
 
-      {/* Links */}
-      <ul className="flex space-x-4">
-        <li
-          onClick={() => setActiveSection("home")}
-          className="cursor-pointer hover:underline"
-        >
-          Home
-        </li>
-        <li
-          onClick={() => setActiveSection("experience")}
-          className="cursor-pointer hover:underline"
-        >
-          Experience
-        </li>
-        <li
-          onClick={() => setActiveSection("projects")}
-          className="cursor-pointer hover:underline"
-        >
-          Projects
-        </li>
-        <li
-          onClick={() => setActiveSection("contact")}
-          className="cursor-pointer hover:underline"
-        >
-          Contact
-        </li>
+      {/* Navbar Links */}
+      <ul className="flex space-x-6">
+        {["about", "resume", "portfolio", "blog", "contact"].map((tab) => (
+          <li
+            key={tab}
+            className={`cursor-pointer px-4 py-2 rounded-md ${
+              activeTab === tab
+                ? "bg-yellow-500 text-black font-bold"
+                : "hover:text-yellow-500"
+            }`}
+            onClick={() => handleTabClick(tab)}
+          >
+            {tab.charAt(0).toUpperCase() + tab.slice(1)}
+          </li>
+        ))}
       </ul>
 
-      {/* Theme Toggle */}
+      {/* Theme Toggle Button */}
       <button
-        onClick={toggleTheme}
-        className="p-2 bg-gray-600 rounded-full hover:bg-gray-500"
+        onClick={onThemeToggle}
+        className="theme-toggle p-2 rounded-full bg-gray-700 text-white hover:bg-yellow-500 transition"
       >
-        {isDarkMode ? (
-          <FaSun className="text-yellow-400" />
-        ) : (
-          <FaMoon className="text-blue-500" />
-        )}
+        Toggle Theme
       </button>
     </nav>
   );

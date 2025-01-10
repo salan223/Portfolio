@@ -1,0 +1,120 @@
+.about-section {
+    padding: 2rem;
+    background-color: #22272b;
+    color: #dee4ea;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .dark .about-section {
+    background-color: #dee4ea;
+    color: #22272b;
+  }
+  
+  .about-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  @media (min-width: 768px) {
+    .about-container {
+      flex-direction: row;
+    }
+  }
+  
+  .sidebar {
+    background-color: #2d333a;
+    border-radius: 0.75rem;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  }
+  
+  .dark .sidebar {
+    background-color: #f3f4f6;
+  }
+  
+  .profile-img {
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    width: 100px;
+    height: 100px;
+  }
+  
+  .profile-name {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+  }
+  
+  .profile-title {
+    font-size: 0.9rem;
+    color: #a0aec0;
+    margin-bottom: 1.5rem;
+  }
+  
+  .details ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .details ul li {
+    margin-bottom: 1rem;
+    color: #dee4ea;
+    font-size: 0.85rem;
+  }
+  
+  .social-icons i {
+    color: #fbbf24;
+    font-size: 1rem;
+    margin-right: 0.5rem;
+  }
+  
+  .content h2 {
+    font-size: 1.75rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .content h3 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    font-weight: bold;
+  }
+  
+  .typing-effect .highlight {
+    color: #fbbf24;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  @media (min-width: 768px) {
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  .grid-item {
+    background-color: #2d333a;
+    border-radius: 0.75rem;
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  }
+  
+  .grid-item h4 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #fbbf24;
+  }
+  
