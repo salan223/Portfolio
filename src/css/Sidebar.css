@@ -1,0 +1,152 @@
+
+  .profile {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .profile-img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .profile-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .profile-title {
+    font-size: 1rem;
+    color: #94a3b8; /* Subtle text color */
+  }
+  
+  .details ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .details ul li {
+    margin-bottom: 10px;
+  }
+  
+  .details ul li strong {
+    display: block;
+  }
+  
+  .social-icons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .social-icons i {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #94a3b8;
+  }
+  
+  .social-icons i:hover {
+    color: #38bdf8; /* Light blue on hover */
+  }
+  .sidebar {
+    width: 250px; /* Define a fixed width for the sidebar */
+    height: 100vh; /* Full height */
+    position: fixed; /* Make it fixed on the left */
+    left: 0;
+    top: 0;
+    background-color: var(--sidebar-bg); /* Background color */
+    color: var(--text-color); /* Adjust text color */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensure it stays on top */
+  }
+  
+  /* Set the background color for light and dark themes */
+  :root {
+    --sidebar-bg: #1e293b;
+  }
+  
+  .dark {
+    --sidebar-bg: #1e293b;
+    --text-color: #f1f5f9;
+  }
+  
+  .light {
+    --sidebar-bg: #ffffff;
+    --text-color: #333333;
+  }.sidebar {
+    width: 300px; /* Adjust width to match the layout */
+    height: 100vh; /* Full height */
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--sidebar-bg);
+    color: var(--text-color);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensure it stays above other elements */
+  }
+  
+  .profile {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .profile-img {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .profile-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .profile-title {
+    font-size: 1rem;
+    color: var(--secondary-text);
+  }
+  
+  .details ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .details ul li {
+    margin-bottom: 10px;
+  }
+  
+  .details ul li strong {
+    display: block;
+  }
+  
+  .social-icons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .social-icons i {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--secondary-text);
+  }
+  
+  .social-icons i:hover {
+    color: var(--accent-color);
+  }
+  
+  

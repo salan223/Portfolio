@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { FaSun, FaMoon } from "react-icons/fa";
 
-function Navbar({ toggleTheme, theme }) {
+function Navbar({ toggleTheme, theme, onSelectSection }) {
   const [activeTab, setActiveTab] = useState("about");
 
   const handleTabClick = (tabName) => {
     setActiveTab(tabName);
+    onSelectSection(tabName); // Update the selected section in App.js
   };
 
   return (
